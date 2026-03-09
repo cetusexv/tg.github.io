@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Transfer</title>
+
+<style>
+
+body{
+background:#000;
+color:#fff;
+font-family:Arial;
+margin:0;
+padding:15px;
+}
+
+.container{
+width:100%;
+max-width:600px;
+margin:auto;
+}
+
+.back{
+margin-bottom:20px;
+color:#ccc;
+cursor:pointer;
+}
+
+.card{
+background:#111;
+padding:20px;
+border-radius:12px;
+}
+
+h2{
+margin-top:0;
+}
+
+label{
+font-size:13px;
+color:#ccc;
+}
+
+input,select{
+width:100%;
+padding:14px;
+margin-top:6px;
+margin-bottom:14px;
+background:#1a1a1a;
+border:1px solid #333;
+color:#fff;
+border-radius:8px;
+font-size:15px;
+}
+
+.row{
+display:flex;
+gap:10px;
+}
+
+.row input{
+flex:1;
+}
+
+.amountRow{
+display:flex;
+gap:10px;
+}
+
+.amountRow input{
+flex:1;
+}
+
+.transferBtn{
+background:#f0b90b;
+border:none;
+padding:14px 25px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.summary{
+background:#1a1a1a;
+padding:15px;
+border-radius:8px;
+margin-top:20px;
+}
+
+.footer{
+font-size:12px;
+color:#888;
+margin-top:15px;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="back">← Back</div>
+
+<h2>Bank Transfer</h2>
+
+<div class="card">
+
+<label>Select Bank</label>
+
+<select>
+
+<option>JPMorgan Chase</option>
+<option>Bank of America</option>
+<option>Wells Fargo</option>
+<option>Citibank</option>
+<option>U.S. Bank</option>
+<option>PNC Bank</option>
+<option>Truist Bank</option>
+<option>Goldman Sachs Bank</option>
+<option>Capital One</option>
+<option>TD Bank</option>
+<option>Fifth Third Bank</option>
+<option>KeyBank</option>
+<option>Regions Bank</option>
+<option>Citizens Bank</option>
+<option>M&T Bank</option>
+<option>Huntington Bank</option>
+<option>Ally Bank</option>
+<option>American Express Bank</option>
+<option>First Citizens Bank</option>
+<option>BMO Harris Bank</option>
+<option>Comerica Bank</option>
+<option>Zions Bank</option>
+<option>Webster Bank</option>
+<option>Synovus Bank</option>
+<option>Valley National Bank</option>
+<option>Frost Bank</option>
+<option>East West Bank</option>
+<option>Associated Bank</option>
+<option>Old National Bank</option>
+<option>United Bank</option>
+<option>UMB Bank</option>
+<option>Bank OZK</option>
+<option>Texas Capital Bank</option>
+<option>First Horizon Bank</option>
+<option>Popular Bank</option>
+<option>Commerce Bank</option>
+<option>Wintrust Bank</option>
+<option>Arvest Bank</option>
+<option>Banner Bank</option>
+<option>BankUnited</option>
+<option>Customers Bank</option>
+<option>FirstBank</option>
+<option>Hancock Whitney</option>
+<option>Independent Bank</option>
+<option>Investors Bank</option>
+<option>New York Community Bank</option>
+<option>South State Bank</option>
+<option>Western Alliance Bank</option>
+
+</select>
+
+<label>Receiver Name</label> <input type="text" placeholder="Receiver Name">
+
+<div class="row">
+
+<input type="text" placeholder="Account Number">
+
+<input type="text" placeholder="Routing Number">
+
+</div>
+
+<label>SWIFT / BIC</label> <input type="text" placeholder="SWIFT Code">
+
+<label>Bank Address</label> <input type="text" placeholder="Bank Address">
+
+<label>Transfer Amount (USD)</label>
+
+<div class="amountRow">
+
+<input type="number" placeholder="Amount">
+
+<button class="transferBtn">Transfer</button>
+
+</div>
+
+<div class="summary">
+
+<b>Transfer Summary</b>
+
+<p>Amount: 0 USD</p>
+
+<p>Transfer Fee: 5 USD</p>
+
+<p>Receiver Gets: 0 USD</p>
+
+</div>
+
+<div class="footer">
+
+Secure Bank Transfer • Processing Time: 5-10 Minutes • 50+ Supported USA Banks
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
