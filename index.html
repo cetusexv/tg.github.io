@@ -1,0 +1,380 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cetusexv.com</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+
+body{
+background:#000;
+color:#fff;
+font-family:Arial;
+margin:0;
+padding:15px;
+padding-bottom:80px;
+}
+
+.page{display:none;}
+.active{display:block;}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+}
+
+.logo{
+color:#1de9b6;
+font-weight:bold;
+font-size:20px;
+}
+
+.menuBtn{
+font-size:26px;
+cursor:pointer;
+}
+
+.banner{text-align:center;}
+
+.banner h1{
+font-size:28px;
+margin:10px 0;
+}
+
+.banner span{color:#1de9b6;}
+
+.tabs{
+display:flex;
+gap:10px;
+margin-top:15px;
+}
+
+.tab{
+background:#222;
+padding:6px 12px;
+border-radius:20px;
+font-size:13px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid #333;
+}
+
+.green{
+background:#1bbf73;
+padding:5px 10px;
+border-radius:8px;
+}
+
+h2{
+margin-top:30px;
+border-bottom:1px solid #333;
+padding-bottom:5px;
+}
+
+.menu{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:20px;
+}
+
+.item{
+text-align:center;
+font-size:14px;
+color:#ddd;
+cursor:pointer;
+}
+
+.item img{
+width:35px;
+height:35px;
+margin-bottom:6px;
+}
+
+.assetCard{
+background:#b7d432;
+color:#000;
+padding:20px;
+border-radius:15px;
+}
+
+.assetTop{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.analysisBtn{
+background:#fff;
+border:none;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+}
+
+.assetActions{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+text-align:center;
+}
+
+.assetActions div{
+font-size:12px;
+cursor:pointer;
+}
+
+.assetActions span{
+font-size:20px;
+display:block;
+margin-bottom:5px;
+}
+
+.coin{
+display:flex;
+align-items:center;
+gap:15px;
+padding:15px 0;
+border-bottom:1px solid #333;
+font-size:18px;
+}
+
+.coin img{
+width:35px;
+height:35px;
+border-radius:50%;
+background:white;
+}
+
+.bottomNav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#111;
+display:flex;
+justify-content:space-around;
+padding:10px 0;
+border-top:1px solid #333;
+}
+
+.bottomNav div{
+text-align:center;
+font-size:12px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HOME -->
+
+<div id="home" class="page active">
+
+<div class="topbar">
+<div class="logo">CETUS</div>
+<div class="menuBtn" onclick="showPage('menu')">☰</div>
+</div>
+
+<div class="banner">
+<h1>WELCOME TO THE<br><span>CETUS EXCHANGE</span></h1>
+<p>Futures - Forex - Cryptocurrency</p>
+</div>
+
+<div class="tabs">
+<div class="tab">Crypto</div>
+<div class="tab">Forex</div>
+<div class="tab">Stocks</div>
+</div>
+
+<div class="row">
+<div>BTC / USDT</div>
+<div>65000 <span class="green">+2%</span></div>
+</div>
+
+<div class="row">
+<div>ETH / USDT</div>
+<div>3200 <span class="green">+1.4%</span></div>
+</div>
+
+</div>
+
+<!-- MENU -->
+
+<div id="menu" class="page">
+
+<button onclick="showPage('home')">⬅ Back</button>
+
+<h2>Shortcuts</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/language.png"><br>Select language</div>
+<div class="item"><img src="https://img.icons8.com/color/48/megaphone.png"><br>Announcement</div>
+<div class="item"><img src="https://img.icons8.com/color/48/chat.png"><br>Messages</div>
+<div class="item"><img src="https://img.icons8.com/color/48/customer-support.png"><br>Service</div>
+</div>
+
+<h2>Account</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/email.png"><br>Email</div>
+<div class="item"><img src="https://img.icons8.com/color/48/checked.png"><br>KYC</div>
+<div class="item" onclick="showPage('assets')"><img src="https://img.icons8.com/color/48/money-bag.png"><br>Total assets</div>
+<div class="item"><img src="https://img.icons8.com/color/48/security-checked.png"><br>2FA</div>
+</div>
+
+<h2>Trade</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/exchange.png"><br>Convert</div>
+<div class="item"><img src="https://img.icons8.com/color/48/combo-chart.png"><br>Spot</div>
+<div class="item"><img src="https://img.icons8.com/color/48/us-dollar.png"><br>USDT-M</div>
+<div class="item"><img src="https://img.icons8.com/color/48/increase.png"><br>Options</div>
+</div>
+
+<h2>Grow</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/mining.png"><br>Locked mining</div>
+<div class="item"><img src="https://img.icons8.com/color/48/bank-card-back-side.png"><br>Loan</div>
+</div>
+
+<h2>Rewards and perks</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/star.png"><br>Affiliate</div>
+</div>
+
+<h2>Help</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/school.png"><br>School</div>
+<div class="item"><img src="https://img.icons8.com/color/48/book.png"><br>Learn</div>
+<div class="item"><img src="https://img.icons8.com/color/48/globe.png"><br>Community</div>
+<div class="item"><img src="https://img.icons8.com/color/48/headset.png"><br>Support</div>
+</div>
+
+</div>
+
+<!-- ASSETS -->
+
+<div id="assets" class="page">
+
+<button onclick="showPage('menu')">⬅ Back</button>
+
+<h2>Overview</h2>
+
+<div class="assetCard">
+
+<div class="assetTop">
+<div>Convert total assets</div>
+<button class="analysisBtn">📊 Asset Analysis</button>
+</div>
+
+<h1>0.00 USDT</h1>
+
+<div>Today's PnL 0.00</div>
+
+<div class="assetActions">
+
+<div onclick="showPage('deposit')">
+<span>⬇️</span>
+Deposit
+</div>
+
+<div>
+<span>⬆️</span>
+Withdraw
+</div>
+
+<div>
+<span>🔁</span>
+Transfer
+</div>
+
+<div>
+<span>⚡</span>
+Convert
+</div>
+
+<div>
+<span>📄</span>
+Transactions
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- DEPOSIT -->
+
+<div id="deposit" class="page">
+
+<button onclick="showPage('assets')">⬅ Back</button>
+
+<h2 style="text-align:center">Recharge</h2>
+
+<div class="coin">
+<img src="https://assets.coingecko.com/coins/images/325/small/Tether.png">
+<span>USDT (ERC20)</span>
+</div>
+
+<div class="coin">
+<img src="https://assets.coingecko.com/coins/images/325/small/Tether.png">
+<span>USDT (TRC20)</span>
+</div>
+
+<div class="coin">
+<img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png">
+<span>ETH</span>
+</div>
+
+<div class="coin">
+<img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png">
+<span>BTC</span>
+</div>
+
+<div class="coin">
+<img src="https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png">
+<span>USDC</span>
+</div>
+
+<div class="coin">
+<img src="https://assets.coingecko.com/coins/images/4128/small/solana.png">
+<span>SOL</span>
+</div>
+
+</div>
+
+<div class="bottomNav">
+
+<div onclick="showPage('home')">Home</div>
+<div onclick="showPage('assets')">Assets</div>
+<div onclick="showPage('deposit')">Deposit</div>
+
+</div>
+
+<script>
+
+function showPage(page){
+
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active")
+})
+
+document.getElementById(page).classList.add("active")
+
+}
+
+</script>
+
+</body>
+</html>
+```
