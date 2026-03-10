@@ -1,8 +1,8 @@
-```html
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Advanced Bank Withdraw</title>
 
 <style>
@@ -12,21 +12,22 @@ background:#000;
 color:white;
 font-family:Arial;
 margin:0;
+padding:15px;
 }
 
 .container{
-max-width:900px;
+max-width:500px;
 margin:auto;
-padding:40px 20px;
 }
 
 h2{
-margin-bottom:25px;
+margin-bottom:20px;
+font-size:26px;
 }
 
 .form-box{
 background:#0f0f0f;
-padding:30px;
+padding:20px;
 border-radius:12px;
 border:1px solid #222;
 }
@@ -35,22 +36,24 @@ label{
 display:block;
 margin-top:15px;
 margin-bottom:6px;
-color:#ccc;
+color:#aaa;
+font-size:14px;
 }
 
 input,select{
 width:100%;
-padding:14px;
+padding:13px;
 background:#151515;
 border:1px solid #333;
 border-radius:8px;
 color:white;
-font-size:15px;
+font-size:14px;
 }
 
 .row{
 display:flex;
-gap:15px;
+gap:10px;
+margin-top:10px;
 }
 
 .row input{
@@ -59,7 +62,8 @@ flex:1;
 
 .withdraw-row{
 display:flex;
-gap:15px;
+gap:10px;
+margin-top:10px;
 }
 
 .withdraw-row input{
@@ -69,7 +73,7 @@ flex:1;
 .withdraw-btn{
 background:#f0b90b;
 border:none;
-padding:14px 30px;
+padding:13px 20px;
 border-radius:8px;
 font-weight:bold;
 cursor:pointer;
@@ -78,14 +82,15 @@ cursor:pointer;
 .summary{
 background:#161616;
 margin-top:20px;
-padding:20px;
+padding:18px;
 border-radius:10px;
 border:1px solid #222;
+font-size:14px;
 }
 
 .small{
-font-size:13px;
-color:#aaa;
+font-size:12px;
+color:#888;
 margin-top:10px;
 }
 
@@ -143,7 +148,6 @@ SSL encrypted secure bank transfer • Processing Time: 5-10 Minutes
 </p>
 
 </div>
-
 </div>
 
 <script>
@@ -151,22 +155,76 @@ SSL encrypted secure bank transfer • Processing Time: 5-10 Minutes
 const banks = {
 
 usa:[
-"JPMorgan Chase","Bank of America","Wells Fargo","Citibank","U.S. Bank","PNC Bank","Capital One","TD Bank","Truist Bank",
-"Goldman Sachs","Morgan Stanley","HSBC Bank USA","Charles Schwab Bank","American Express Bank","Discover Bank","Ally Bank",
-"Fifth Third Bank","KeyBank","Huntington Bank","Regions Bank","M&T Bank","BMO Harris Bank","Citizens Bank","First Republic Bank",
-"First Horizon Bank","Comerica Bank","Synovus Bank","Popular Bank","East West Bank","Western Alliance Bank","BankUnited",
-"Valley National Bank","PacWest Bank","Webster Bank","UMB Bank","Frost Bank","Old National Bank","Associated Bank",
-"Cadence Bank","Wintrust Bank","Prosperity Bank","Texas Capital Bank","FirstBank","Arvest Bank","Santander Bank",
-"Flagstar Bank","Union Bank","City National Bank","Customers Bank","First Interstate Bank","Glacier Bank",
-"Zions Bank","BOK Financial","Trustmark Bank"
+"JPMorgan Chase",
+"Bank of America",
+"Wells Fargo",
+"Citibank",
+"U.S. Bank",
+"PNC Bank",
+"Capital One",
+"TD Bank",
+"Truist Bank",
+"Goldman Sachs Bank",
+"Morgan Stanley Bank",
+"HSBC Bank USA",
+"Charles Schwab Bank",
+"American Express Bank",
+"Discover Bank",
+"Ally Bank",
+"Fifth Third Bank",
+"KeyBank",
+"Huntington Bank",
+"Regions Bank",
+"M&T Bank",
+"BMO Harris Bank",
+"Citizens Bank",
+"First Republic Bank",
+"First Horizon Bank",
+"Comerica Bank",
+"Synovus Bank",
+"Popular Bank",
+"East West Bank",
+"Western Alliance Bank",
+"BankUnited",
+"Valley National Bank",
+"PacWest Bank",
+"Webster Bank",
+"UMB Bank",
+"Frost Bank",
+"Old National Bank",
+"Associated Bank",
+"Cadence Bank",
+"Wintrust Bank",
+"Prosperity Bank",
+"Texas Capital Bank",
+"FirstBank",
+"Arvest Bank",
+"Santander Bank",
+"Flagstar Bank",
+"Union Bank",
+"City National Bank",
+"Customers Bank",
+"First Interstate Bank",
+"Glacier Bank",
+"Zions Bank",
+"BOK Financial",
+"Trustmark Bank"
 ],
 
 uk:[
-"HSBC","Barclays","Lloyds Bank","NatWest","Standard Chartered"
+"HSBC",
+"Barclays",
+"Lloyds Bank",
+"NatWest",
+"Standard Chartered"
 ],
 
 canada:[
-"Royal Bank of Canada","TD Canada Trust","Scotiabank","BMO","CIBC"
+"Royal Bank of Canada",
+"TD Canada Trust",
+"Scotiabank",
+"BMO",
+"CIBC"
 ]
 
 };
@@ -206,4 +264,3 @@ document.getElementById("receive").innerText=receive.toFixed(2);
 
 </body>
 </html>
-```
