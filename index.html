@@ -437,7 +437,11 @@ if (typeof window.ethereum !== 'undefined') {
 const accounts = await window.ethereum.request({
 method: 'eth_requestAccounts'
 });
-alert("Login successful");
+document.getElementById("toast").classList.add("show");
+
+setTimeout(function(){
+document.getElementById("toast").classList.remove("show");
+},2000);
 
 } else {
 
@@ -451,6 +455,8 @@ window.onload = function(){
 connectWallet();
 }
 </script>
+
+<div id="toast">Login successful</div>
 
 </body>
 </html>
