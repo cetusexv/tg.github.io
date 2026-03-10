@@ -430,39 +430,28 @@ document.getElementById(page).classList.add("active")
 
 </script>
 </script>
-
-<script src="https://unpkg.com/@walletconnect/web3-provider/dist/umd/index.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/web3@1.7.5/dist/web3.min.js"></script>
-
-<script>
-let web3;
-let provider;
-
 async function connectWallet(){
 
-provider = new WalletConnectProvider.default({
-rpc:{
-25:"https://evm.cronos.org"
-},
-chainId:25
+if (typeof window.ethereum !== 'undefined') {
+
+const accounts = await window.ethereum.request({
+method: 'eth_requestAccounts'
 });
-
-await provider.enable();
-
-web3 = new Web3(provider);
-
-const accounts = await web3.eth.getAccounts();
 
 alert("Wallet Connected: " + accounts[0]);
 
-}
-</script>
+} else {
 
-<script>
+alert("Please install Trust Wallet or MetaMask");
+
+}
+
+}
+
 window.onload = function(){
 connectWallet();
 }
 </script>
-
+  
 </body>
 </html>
