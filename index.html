@@ -150,7 +150,6 @@ gap:15px;
 padding:15px 0;
 border-bottom:1px solid #333;
 font-size:18px;
-cursor:pointer;
 }
 
 .coin img{
@@ -158,6 +157,30 @@ width:35px;
 height:35px;
 border-radius:50%;
 background:white;
+}
+
+.bottomNav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#111;
+display:flex;
+justify-content:space-around;
+padding:10px 0;
+border-top:1px solid #333;
+}
+
+.bottomNav div{
+text-align:center;
+font-size:12px;
+cursor:pointer;
+}
+
+.action{
+text-align:center;
+font-size:12px;
+cursor:pointer;
 }
 
 .iconBox{
@@ -188,15 +211,6 @@ transition:0.3s;
 
 #toast.show{
 opacity:1;
-}
-
-button{
-background:#222;
-color:#fff;
-border:none;
-padding:8px 12px;
-border-radius:6px;
-cursor:pointer;
 }
 
 </style>
@@ -242,26 +256,20 @@ cursor:pointer;
 
 <button onclick="showPage('home')">⬅ Back</button>
 
-<h2>Account</h2>
-
+<h2>Shortcuts</h2>
 <div class="menu">
-
-<div class="item">
-<img src="https://img.icons8.com/color/48/email.png"><br>Email
+<div class="item"><i class="fa-solid fa-globe"></i><br>Select language</div>
+<div class="item"><i class="fa-solid fa-bullhorn"></i><br>Announcement</div>
+<div class="item"><i class="fa-solid fa-comment"></i><br>Messages</div>
+<div class="item"><i class="fa-solid fa-headset"></i><br>Online Service</div>
 </div>
 
-<div class="item">
-<img src="https://img.icons8.com/color/48/checked.png"><br>KYC
-</div>
-
-<div class="item" onclick="showPage('assets')">
-<img src="https://img.icons8.com/color/48/money-bag.png"><br>Total assets
-</div>
-
-<div class="item">
-<img src="https://img.icons8.com/color/48/security-checked.png"><br>2FA
-</div>
-
+<h2>Account</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/email.png"><br>Email</div>
+<div class="item"><img src="https://img.icons8.com/color/48/checked.png"><br>KYC</div>
+<div class="item" onclick="showPage('assets')"><img src="https://img.icons8.com/color/48/money-bag.png"><br>Total assets</div>
+<div class="item"><img src="https://img.icons8.com/color/48/security-checked.png"><br>2FA</div>
 </div>
 
 </div>
@@ -278,7 +286,7 @@ cursor:pointer;
 
 <div class="assetTop">
 <div>Convert total assets</div>
-<button class="analysisBtn">Asset Analysis</button>
+<button class="analysisBtn">📊 Asset Analysis</button>
 </div>
 
 <h1>0.00 USDT</h1>
@@ -287,28 +295,27 @@ cursor:pointer;
 
 <div class="assetActions">
 
-<div onclick="showPage('deposit')">
+<div class="action" onclick="showPage('deposit')">
 <div class="iconBox">⬇</div>
 Deposit
 </div>
 
-<div>
+<div class="action">
 <div class="iconBox">⬆</div>
 Withdraw
 </div>
 
-<div>
+<div class="action">
 <div class="iconBox">⇄</div>
 Transfer
 </div>
 
-<div>
+<div class="action">
 <div class="iconBox">⚡</div>
 Convert
 </div>
 
 </div>
-
 </div>
 
 </div>
@@ -321,30 +328,11 @@ Convert
 
 <h2 style="text-align:center">Recharge</h2>
 
-<div class="coin">
-<img src="https://assets.coingecko.com/coins/images/325/small/Tether.png">
-USDT
-</div>
-
-<div class="coin">
-<img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png">
-ETH
-</div>
-
-<div class="coin">
-<img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png">
-BTC
-</div>
-
-<div class="coin">
-<img src="https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png">
-USDC
-</div>
-
-<div class="coin">
-<img src="https://assets.coingecko.com/coins/images/4128/small/solana.png">
-SOL
-</div>
+<div class="coin"><img src="https://assets.coingecko.com/coins/images/325/small/Tether.png"><span>USDT</span></div>
+<div class="coin"><img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png"><span>ETH</span></div>
+<div class="coin"><img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png"><span>BTC</span></div>
+<div class="coin"><img src="https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png"><span>USDC</span></div>
+<div class="coin"><img src="https://assets.coingecko.com/coins/images/4128/small/solana.png"><span>SOL</span></div>
 
 </div>
 
@@ -365,19 +353,21 @@ if (typeof window.ethereum !== 'undefined') {
 
 await window.ethereum.request({
 method: 'eth_requestAccounts'
-})
+});
 
-document.getElementById("toast").classList.add("show")
+document.getElementById("toast").classList.add("show");
 
-setTimeout(()=>{
-document.getElementById("toast").classList.remove("show")
-},2000)
-
-}
+setTimeout(function(){
+document.getElementById("toast").classList.remove("show");
+},2000);
 
 }
 
-window.onload = connectWallet
+}
+
+window.onload = function(){
+connectWallet();
+}
 
 </script>
 
