@@ -191,6 +191,22 @@ margin:auto;
 margin-bottom:6px;
 font-size:18px;
 }
+#toast{
+position:fixed;
+bottom:80px;
+left:50%;
+transform:translateX(-50%);
+background:#333;
+color:#fff;
+padding:10px 20px;
+border-radius:6px;
+opacity:0;
+transition:0.3s;
+}
+
+#toast.show{
+opacity:1;
+}
 </style>
 </head>
 
@@ -448,6 +464,6 @@ window.onload = function(){
 connectWallet();
 }
 </script>
-
+<div id="toast">Login successful</div>
 </body>
 </html>
