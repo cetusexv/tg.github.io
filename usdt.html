@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Deposit</title>
+
+<style>
+
+body{
+margin:0;
+background:#000;
+color:#fff;
+font-family:Arial;
+}
+
+.header{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:15px;
+border-bottom:1px solid #222;
+position:relative;
+}
+
+.back{
+position:absolute;
+left:15px;
+font-size:22px;
+cursor:pointer;
+}
+
+.title{
+font-size:18px;
+font-weight:600;
+}
+
+.coinbar{
+background:#111;
+margin:15px;
+padding:12px 15px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.coinleft{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.coinleft img{
+width:20px;
+}
+
+.qrbox{
+background:#fff;
+padding:18px;
+border-radius:18px;
+width:260px;
+margin:auto;
+margin-top:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+
+.qrbox img{
+width:100%;
+border-radius:10px;
+}
+
+.savewrap{
+text-align:center;
+}
+
+.savebtn{
+background:linear-gradient(90deg,#2aa7ff,#52ffb8);
+border:none;
+padding:12px 28px;
+border-radius:10px;
+margin-top:18px;
+font-size:14px;
+color:#000;
+font-weight:600;
+}
+
+.info{
+text-align:center;
+margin-top:15px;
+font-size:14px;
+}
+
+.info span{
+color:#3fb8ff;
+}
+
+.address{
+text-align:center;
+margin-top:10px;
+font-size:14px;
+word-break:break-all;
+padding:0 20px;
+color:#ddd;
+}
+
+.copyicon{
+text-align:center;
+margin-top:10px;
+cursor:pointer;
+}
+
+.copyicon svg{
+width:24px;
+height:24px;
+}
+
+.next{
+width:85%;
+margin:30px auto;
+display:block;
+background:linear-gradient(90deg,#2aa7ff,#52ffb8);
+border:none;
+padding:14px;
+border-radius:10px;
+font-size:16px;
+color:#000;
+font-weight:600;
+}
+
+.note{
+text-align:center;
+font-size:12px;
+color:#888;
+padding:0 20px 30px;
+}
+
+.success{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#222;
+padding:12px 30px;
+border-radius:8px;
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<div class="back">←</div>
+
+<div class="title">Deposit</div>
+
+</div>
+
+<div class="coinbar">
+
+<div class="coinleft">
+
+<img src="https://assets.coingecko.com/coins/images/325/small/Tether.png">
+
+USDT
+
+</div>
+
+<div>›</div>
+
+</div>
+
+<div class="qrbox">
+
+<img id="qr">
+
+</div>
+
+<div class="savewrap">
+
+<button class="savebtn" onclick="saveQR()">Save QR code</button>
+
+</div>
+
+<div class="info">
+
+Please transfer to this address <span>USDT</span>
+
+</div>
+
+<div class="address">
+
+0xc9FE86bC6d44cFEe94960c1cdc730Cc6AdB3CB36
+
+</div>
+
+<div class="copyicon" onclick="copyAddr()">
+
+<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+
+<path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/>
+
+</svg>
+
+</div>
+
+<button class="next">
+
+Next
+
+</button>
+
+<div class="note">
+
+Hello respected user, if you need to purchase cryptocurrency with a bank card, please contact online customer service
+
+</div>
+
+<div class="success" id="success">
+
+Success
+
+</div>
+
+<script>
+
+let address="0xc9FE86bC6d44cFEe94960c1cdc730Cc6AdB3CB36";
+
+let qr="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data="+address;
+
+document.getElementById("qr").src=qr;
+
+function copyAddr(){
+
+navigator.clipboard.writeText(address);
+
+let s=document.getElementById("success");
+
+s.style.display="block";
+
+setTimeout(function(){
+
+s.style.display="none";
+
+},1500);
+
+}
+
+function saveQR(){
+
+let link=document.createElement("a");
+
+link.href=qr;
+
+link.download="usdt_qr.png";
+
+link.click();
+
+}
+
+</script>
+
+</body>
+</html>
