@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +7,7 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <meta property="og:image" content="logo.png">
-
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
 <style>
 
 body{
@@ -176,7 +173,6 @@ text-align:center;
 font-size:12px;
 cursor:pointer;
 }
-
 .action{
 text-align:center;
 font-size:12px;
@@ -195,7 +191,6 @@ margin:auto;
 margin-bottom:6px;
 font-size:18px;
 }
-
 #toast{
 position:fixed;
 bottom:80px;
@@ -212,7 +207,6 @@ transition:0.3s;
 #toast.show{
 opacity:1;
 }
-
 </style>
 </head>
 
@@ -224,6 +218,7 @@ opacity:1;
 
 <div class="topbar">
 <div class="logo">CETUS</div>
+  
 <div class="menuBtn" onclick="showPage('menu')">≡</div>
 </div>
 
@@ -258,10 +253,22 @@ opacity:1;
 
 <h2>Shortcuts</h2>
 <div class="menu">
-<div class="item"><i class="fa-solid fa-globe"></i><br>Select language</div>
-<div class="item"><i class="fa-solid fa-bullhorn"></i><br>Announcement</div>
-<div class="item"><i class="fa-solid fa-comment"></i><br>Messages</div>
-<div class="item"><i class="fa-solid fa-headset"></i><br>Online Service</div>
+<div class="item">
+<i class="fa-solid fa-globe"></i><br>
+Select language
+</div>
+<div class="item">
+<i class="fa-solid fa-bullhorn"></i><br>
+Announcement
+</div>
+<div class="item">
+<i class="fa-solid fa-comment"></i><br>
+Messages
+</div>
+<div class="item">
+<i class="fa-solid fa-headset"></i><br>
+Online Service
+</div>
 </div>
 
 <h2>Account</h2>
@@ -270,6 +277,33 @@ opacity:1;
 <div class="item"><img src="https://img.icons8.com/color/48/checked.png"><br>KYC</div>
 <div class="item" onclick="showPage('assets')"><img src="https://img.icons8.com/color/48/money-bag.png"><br>Total assets</div>
 <div class="item"><img src="https://img.icons8.com/color/48/security-checked.png"><br>2FA</div>
+</div>
+
+<h2>Trade</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/exchange.png"><br>Convert</div>
+<div class="item"><img src="https://img.icons8.com/color/48/combo-chart.png"><br>Spot</div>
+<div class="item"><img src="https://img.icons8.com/color/48/us-dollar.png"><br>USDT-M</div>
+<div class="item"><img src="https://img.icons8.com/color/48/increase.png"><br>Options</div>
+</div>
+
+<h2>Grow</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/mining.png"><br>Locked mining</div>
+<div class="item"><img src="https://img.icons8.com/color/48/bank-card-back-side.png"><br>Loan</div>
+</div>
+
+<h2>Rewards and perks</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/star.png"><br>Affiliate</div>
+</div>
+
+<h2>Help</h2>
+<div class="menu">
+<div class="item"><img src="https://img.icons8.com/color/48/school.png"><br>School</div>
+<div class="item"><img src="https://img.icons8.com/color/48/book.png"><br>Learn</div>
+<div class="item"><img src="https://img.icons8.com/color/48/globe.png"><br>Community</div>
+<div class="item"><img src="https://img.icons8.com/color/48/headset.png"><br>Support</div>
 </div>
 
 </div>
@@ -300,66 +334,139 @@ opacity:1;
 Deposit
 </div>
 
-<div class="action">
+<div class="action" onclick="window.location.href='bank-withdraw.html'">
 <div class="iconBox">⬆</div>
 Withdraw
 </div>
 
-<div class="action">
+<div class="action" onclick="window.location.href='transfer.html'">
 <div class="iconBox">⇄</div>
 Transfer
 </div>
 
-<div class="action">
+<div class="action" onclick="showPage('convert')">
 <div class="iconBox">⚡</div>
 Convert
 </div>
 
-</div>
+<div class="action" onclick="showPage('transactions')">
+<div class="iconBox">📄</div>
+Transactions
 </div>
 
 </div>
+</div>
+  <h2>My Account</h2>
 
-<!-- DEPOSIT -->
+<div class="row">
+<div>
+<div style="color:#aaa;font-size:14px;">Funding</div>
+<div style="font-size:18px;margin-top:5px;">0.00 USDT</div>
+</div>
+<div>›</div>
+</div>
 
+<div class="row">
+<div>
+<div style="color:#aaa;font-size:14px;">Exchange</div>
+<div style="font-size:18px;margin-top:5px;">0.00 USDT</div>
+</div>
+<div>›</div>
+</div>
+
+<div class="row">
+<div>
+<div style="color:#aaa;font-size:14px;">Contracts</div>
+<div style="font-size:18px;margin-top:5px;">0.00 USDT</div>
+</div>
+<div>›</div>
+</div>
+
+<div class="row">
+<div>
+<div style="color:#aaa;font-size:14px;">Option</div>
+<div style="font-size:18px;margin-top:5px;">0.00 USDT</div>
+</div>
+<div>›</div>
+</div>
+
+<div class="row">
+<div>
+<div style="color:#aaa;font-size:14px;">Mining</div>
+<div style="font-size:18px;margin-top:5px;">0.00 USDT</div>
+</div>
+<div>›</div>
+</div>
+</div> <!-- DEPOSIT -->
 <div id="deposit" class="page">
 
 <button onclick="showPage('assets')">⬅ Back</button>
 
 <h2 style="text-align:center">Recharge</h2>
 
-<div class="coin"><img src="https://assets.coingecko.com/coins/images/325/small/Tether.png"><span>USDT</span></div>
-<div class="coin"><img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png"><span>ETH</span></div>
-<div class="coin"><img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png"><span>BTC</span></div>
-<div class="coin"><img src="https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png"><span>USDC</span></div>
-<div class="coin"><img src="https://assets.coingecko.com/coins/images/4128/small/solana.png"><span>SOL</span></div>
+<div class="coin" onclick="window.location.href='usdt.html'">
+<img src="https://assets.coingecko.com/coins/images/325/small/Tether.png">
+<span>USDT</span>
+</div>
+
+<div class="coin">
+<img src="https://assets.coingecko.com/coins/images/325/small/Tether.png">
+<span>USDT (TRC20)</span>
+</div>
+
+<div class="coin" onclick="window.location.href='eth.html'">
+<img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png">
+<span>ETH</span>
+</div>
+  
+<div class="coin" onclick="window.location.href='btc.html'">
+<img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png">
+<span>BTC</span>
+</div>
+
+<div class="coin" onclick="window.location.href='usdc.html'">
+<img src="https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png">
+<span>USDC</span>
+</div>
+
+<div class="coin" onclick="window.location.href='sol.html'">
+<img src="https://assets.coingecko.com/coins/images/4128/small/solana.png">
+<span>SOL</span>
+</div>
 
 </div>
 
-<div id="toast">Login successful</div>
 
 <script>
 
 function showPage(page){
+
 document.querySelectorAll(".page").forEach(p=>{
 p.classList.remove("active")
 })
+
 document.getElementById(page).classList.add("active")
+
 }
 
+</script>
+<script>
 async function connectWallet(){
 
 if (typeof window.ethereum !== 'undefined') {
 
-await window.ethereum.request({
+const accounts = await window.ethereum.request({
 method: 'eth_requestAccounts'
 });
-
 document.getElementById("toast").classList.add("show");
 
 setTimeout(function(){
 document.getElementById("toast").classList.remove("show");
 },2000);
+
+} else {
+
+alert("Please install Trust Wallet or MetaMask");
 
 }
 
@@ -368,9 +475,14 @@ document.getElementById("toast").classList.remove("show");
 window.onload = function(){
 connectWallet();
 }
-
 </script>
-
+<div id="toast">Login successful</div>
 </body>
 </html>
-```
+
+
+
+
+
+
+
