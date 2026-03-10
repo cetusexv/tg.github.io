@@ -171,7 +171,24 @@ text-align:center;
 font-size:12px;
 cursor:pointer;
 }
+.action{
+text-align:center;
+font-size:12px;
+cursor:pointer;
+}
 
+.iconBox{
+width:42px;
+height:42px;
+background:#a5c52a;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+margin-bottom:6px;
+font-size:18px;
+}
 </style>
 </head>
 
@@ -281,35 +298,30 @@ cursor:pointer;
 
 <div class="assetActions">
 
-  <!-- Deposit -->
-  <div onclick="showPage('deposit')">
-    <span>💰</span>
-    Deposit
-  </div>
+<div class="action" onclick="showPage('deposit')">
+<div class="iconBox">⬇</div>
+Deposit
+</div>
 
-  <!-- Withdraw -->
-  <div onclick="window.location.href='bank-withdraw.html'">
-    <span>🏧</span>
-    Withdraw
-  </div>
+<div class="action" onclick="window.location.href='bank-withdraw.html'">
+<div class="iconBox">⬆</div>
+Withdraw
+</div>
 
-  <!-- Transfer -->
-<div onclick="window.location.href='transfer.html'">
-<span>🔄</span>
+<div class="action" onclick="window.location.href='transfer.html'">
+<div class="iconBox">⇄</div>
 Transfer
 </div>
 
-  <!-- Convert -->
-  <div onclick="showPage('convert')">
-    <span>💱</span>
-    Convert
-  </div>
+<div class="action" onclick="showPage('convert')">
+<div class="iconBox">⚡</div>
+Convert
+</div>
 
-  <!-- Transactions -->
-  <div onclick="showPage('transactions')">
-    <span>📜</span>
-    Transactions
-  </div>
+<div class="action" onclick="showPage('transactions')">
+<div class="iconBox">📄</div>
+Transactions
+</div>
 
 </div>
 </div>
