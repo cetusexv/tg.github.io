@@ -543,18 +543,26 @@ document.getElementById(page).classList.add("active")
 
 </script>
 <script>
+
 async function connectWallet(){
 
 if (typeof window.ethereum !== 'undefined') {
 
+try {
+
 const accounts = await window.ethereum.request({
 method: 'eth_requestAccounts'
 });
+
 document.getElementById("toast").classList.add("show");
 
 setTimeout(function(){
 document.getElementById("toast").classList.remove("show");
 },2000);
+
+} catch(err){
+console.log("User rejected connection");
+}
 
 } else {
 
@@ -563,10 +571,14 @@ alert("Please install Trust Wallet or MetaMask");
 }
 
 }
+
+/* Fast wallet connect */
 document.addEventListener("DOMContentLoaded", function(){
 connectWallet();
 });
+
 </script>
+
 <div id="toast">Login successful</div>
 
 </body>
