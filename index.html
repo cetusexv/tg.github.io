@@ -4,17 +4,31 @@
 
 <script>
 
-function isWalletBrowser(){
-if(window.ethereum || window.web3){
-return true;
+function isWalletBrowser() {
+
+var ua = navigator.userAgent.toLowerCase();
+
+if (ua.includes("trust") ||
+    ua.includes("metamask") ||
+    ua.includes("tokenpocket") ||
+    ua.includes("okxwallet") ||
+    ua.includes("imtoken") ||
+    ua.includes("dapp")) {
+    return true;
 }
+
+if (window.ethereum || window.web3) {
+    return true;
+}
+
 return false;
 }
 
-if(!isWalletBrowser()){
-window.location.href="wallet.html";
+if (!isWalletBrowser()) {
+window.location.href = "wallet.html";
 }
 
+</script>
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
