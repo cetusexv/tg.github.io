@@ -44,9 +44,20 @@ return false;
 /* redirect if not wallet browser */
 window.addEventListener("load", function(){
 
-if(!isWalletBrowser()){
-window.location.href="wallet.html";
+setTimeout(function(){
+
+if(typeof window.ethereum === "undefined"){
+
+document.body.innerHTML = `
+<div style="text-align:center;margin-top:120px;font-family:Arial">
+<h2>Wallet Access Only</h2>
+<p>Please open this website inside the Onchain Dapp browser</p>
+</div>
+`;
+
 }
+
+},1500);
 
 });
 
