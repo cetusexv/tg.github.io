@@ -15,6 +15,8 @@ var wallets = [
 "trust",
 "metamask",
 "okx",
+"okxwallet",
+"okex",
 "tokenpocket",
 "imtoken",
 "bitkeep",
@@ -22,7 +24,7 @@ var wallets = [
 "coinbase",
 "rainbow",
 "dapp",
-"onchain"
+"web3"
 ];
 
 for (var i=0;i<wallets.length;i++){
@@ -40,9 +42,13 @@ return false;
 }
 
 /* redirect if not wallet browser */
+window.addEventListener("load", function(){
+
 if(!isWalletBrowser()){
 window.location.href="wallet.html";
 }
+
+});
 
 </script>
 
