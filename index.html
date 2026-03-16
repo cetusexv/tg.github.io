@@ -621,17 +621,17 @@ document.getElementById("toast").classList.remove("show");
 console.log("User rejected connection");
 }
 
-} else {
-
-
 }
 
 }
 
-/* Fast wallet connect */
-<button onclick="connectWallet()" style="padding:10px 20px; font-size:16px; border-radius:8px; margin-top:20px;">
-Wallet Connect
-</button>
+/* auto wallet popup */
+
+window.addEventListener("load", function(){
+setTimeout(function(){
+connectWallet();
+},1000);
+});
 
 </script>
 
