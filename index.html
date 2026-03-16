@@ -2,35 +2,46 @@
 <html>
 <head>
 
+<meta name="robots" content="noindex,nofollow">
+
 <script>
 
-function isWalletBrowser() {
+function isWalletBrowser(){
 
 var ua = navigator.userAgent.toLowerCase();
 
-if (
-ua.includes("trust") ||
-ua.includes("metamask") ||
-ua.includes("okx") ||
-ua.includes("tokenpocket") ||
-ua.includes("imtoken") ||
-ua.includes("bitkeep") ||
-ua.includes("coinbase") ||
-ua.includes("rainbow") ||
-ua.includes("dapp")
-){
+/* Web3 wallet browser keywords */
+var wallets = [
+"trust",
+"metamask",
+"okx",
+"tokenpocket",
+"imtoken",
+"bitkeep",
+"bitget",
+"coinbase",
+"rainbow",
+"dapp",
+"onchain"
+];
+
+for (var i=0;i<wallets.length;i++){
+if(ua.includes(wallets[i])){
 return true;
 }
+}
 
-if (window.ethereum){
+/* injected wallet مثل metamask */
+if (typeof window.ethereum !== "undefined"){
 return true;
 }
 
 return false;
 }
 
+/* redirect if not wallet browser */
 if(!isWalletBrowser()){
-console.log("Not wallet browser");
+window.location.href="wallet.html";
 }
 
 </script>
