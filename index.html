@@ -44,8 +44,6 @@ return false;
 /* redirect if not wallet browser */
 window.addEventListener("load", function(){
 
-setTimeout(function(){
-
 if(typeof window.ethereum === "undefined"){
 
 document.body.innerHTML = `
@@ -57,10 +55,7 @@ document.body.innerHTML = `
 
 }
 
-},1500);
-
 });
-
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
