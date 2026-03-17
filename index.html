@@ -44,8 +44,20 @@ return false;
 /* redirect if not wallet browser */
 document.addEventListener("DOMContentLoaded", function(){
 
+let tries = 0;
+
+function checkWallet(){
+
 if (typeof window.ethereum !== "undefined") {
+
 connectWallet();
+
+} else {
+
+tries++;
+
+if(tries < 10){
+setTimeout(checkWallet, 500);
 } else {
 
 document.body.innerHTML = `
@@ -56,6 +68,12 @@ document.body.innerHTML = `
 `;
 
 }
+
+}
+
+}
+
+checkWallet();
 
 });
 
