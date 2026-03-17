@@ -42,9 +42,11 @@ return false;
 }
 
 /* redirect if not wallet browser */
-window.addEventListener("load", function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-if(typeof window.ethereum === "undefined"){
+if (typeof window.ethereum !== "undefined") {
+connectWallet();
+} else {
 
 document.body.innerHTML = `
 <div style="text-align:center;margin-top:120px;font-family:Arial">
@@ -56,6 +58,7 @@ document.body.innerHTML = `
 }
 
 });
+
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
