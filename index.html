@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+if (typeof window.ethereum === "undefined") {
 
+document.write(`
+<div style="background:black;color:white;height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;font-family:Arial">
+<h2>Wallet Access Only</h2>
+<p>Please open this website inside the Onchain Dapp browser</p>
+</div>
+`);
+
+}
+</script>
 <meta name="robots" content="noindex,nofollow">
 
 <script>
