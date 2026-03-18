@@ -627,7 +627,7 @@ Transactions
 <span>ETH</span>
 </div>
   
-<div class="coin" onclick="window.location.href='btc.html'">
+<div class="coin" onclick="goToBTC()">
 <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png">
 <span>BTC</span>
 </div>
@@ -658,7 +658,10 @@ document.querySelectorAll(".page").forEach(p=>{
 document.getElementById(page).classList.add("active")
 
 }
-
+function goToBTC(){
+  sessionStorage.setItem("from", "deposit");
+  window.location.href = "btc.html";
+}
 </script>
 <script>
 window.onpopstate = function(event){
