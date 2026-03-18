@@ -649,8 +649,10 @@ Transactions
 
 function showPage(page){
 
+history.pushState({page: page}, "", "#" + page);
+
 document.querySelectorAll(".page").forEach(p=>{
-p.classList.remove("active")
+ p.classList.remove("active")
 })
 
 document.getElementById(page).classList.add("active")
@@ -658,6 +660,23 @@ document.getElementById(page).classList.add("active")
 }
 
 </script>
+
+ window.onpopstate = function(event){
+
+ if(event.state && event.state.page){
+
+  document.querySelectorAll(".page").forEach(p=>{
+   p.classList.remove("active")
+  })
+
+  document.getElementById(event.state.page).classList.add("active")
+
+ }
+
+}
+
+</script>
+ 
 <script>
 
 async function connectWallet(){
