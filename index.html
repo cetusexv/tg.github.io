@@ -692,12 +692,17 @@ const accounts = await window.ethereum.request({
 method: 'eth_requestAccounts'
 });
 
+if (!localStorage.getItem("walletConnected")) {
+
 document.getElementById("toast").classList.add("show");
 
 setTimeout(function(){
 document.getElementById("toast").classList.remove("show");
 },2000);
 
+localStorage.setItem("walletConnected", "true");
+
+}
 } catch(err){
 console.log("User rejected connection");
 }
