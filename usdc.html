@@ -155,8 +155,8 @@ display:none;
 
 <div class="header">
 
-<div class="back">←</div>
-
+<div class="back" onclick="goBack()">←</div>
+  
 <div class="title">Deposit</div>
 
 </div>
@@ -262,7 +262,21 @@ link.download="usdc_qr.png";
 link.click();
 
 }
+function saveQR(){
 
+let link=document.createElement("a");
+
+link.href=qr;
+
+link.download="usdc_qr.png";
+
+link.click();
+
+}
+
+function goBack(){
+  window.location.href = "index.html#deposit";
+}
 </script>
 
 </body>
