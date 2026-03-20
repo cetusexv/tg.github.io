@@ -155,7 +155,7 @@ display:none;
 
 <div class="header">
 
-<div class="back">←</div>
+<div class="back" onclick="goBack()">←</div>
 
 <div class="title">Deposit</div>
 
@@ -262,7 +262,9 @@ link.download="usdt_qr.png";
 link.click();
 
 }
-
+function goBack(){
+  window.history.back();
+}
 </script>
 
 </body>
