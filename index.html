@@ -711,7 +711,11 @@ console.log("User rejected connection");
 document.addEventListener("DOMContentLoaded", function(){
 connectWallet();
 });
-
+window.onload = function(){
+  if(window.location.hash === "#deposit"){
+    showPage("deposit");
+  }
+}
 </script>
 
 <div id="toast">Login successful</div>
